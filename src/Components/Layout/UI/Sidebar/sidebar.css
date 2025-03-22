@@ -1,0 +1,131 @@
+/* Sidebar Styles */
+
+.sidebar {
+  text-decoration: none;
+  top: 0px;
+  width: 83px;
+  background: #fff;
+  height: 100vh;
+  position: fixed;
+  z-index: 1000;
+  transition: width 0.3s ease-in-out;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.sidebar.open {
+  width: 290px;
+}
+
+.sidebar:hover {
+  width: 290px;
+}
+
+.sidebar .menu-title span,
+.sidebar .submenu span {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.sidebar.open .menu-title span,
+.sidebar:hover .menu-title span,
+.sidebar.open .submenu span,
+.sidebar:hover .submenu span {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Ensure icons remain visible */
+.sidebar .menu-title svg,
+.sidebar .submenu-item svg {
+  min-width: 20px; /* Ensures icons are always visible */
+  margin-right: 10px;
+  color: black;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:  24px 15px;
+  background: #f8f9fa;
+}
+
+.profile-box {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.sidebar.open .profile-box,
+.sidebar:hover .profile-box {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu-item {
+  padding: 10px 29px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  justify-content: space-between;
+}
+
+.menu-item .menu-title {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: Start;
+}
+
+
+.menu-item:hover,
+.menu-item.active {
+  background: rgba(186, 192, 245, 0.3);
+  border-radius: 5px;
+}
+
+.dropdown-icon {
+  transition: transform 0.3s ease;
+}
+
+.dropdown-icon.rotated {
+  transform: rotate(180deg);
+}
+
+/* Submenu */
+.submenu {
+  display: none;
+  padding-left: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.submenu.open {
+  display: block;
+}
+
+.submenu-item {
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+  color: #6c757d;
+  cursor: pointer;
+}
+
+.submenu-item.active {
+  color: red;
+}
+
+.submenu-item:hover {
+  color: black;
+}
+
+.textdecorations {
+  text-decoration: none;
+  color: black;
+}
